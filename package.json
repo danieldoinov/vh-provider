@@ -1,0 +1,31 @@
+{
+  "name": "vh-provider",
+  "version": "1.0.0",
+  "description": "Provides a JS functionality to enable \"visual height\" ( 100vh ) on HTML elements in Apple devices ( Safari... )",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieldoinov/vh-provider.git"
+  },
+  "keywords": [
+    "vertical",
+    "height",
+    "vh",
+    "safari",
+    "fix"
+  ],
+  "author": "Daniel Doinov",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/danieldoinov/vh-provider/issues"
+  },
+  "homepage": "https://github.com/danieldoinov/vh-provider#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^1.0.2"
+  }
+}

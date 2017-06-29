@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="vh-provider.js"></script>
+    <script>
+        $(document).ready(function (){
+            let options = {
+                debug:false, //display debug information in console
+                force:true, // force resizing on all browsers
+                breakpoints:{
+                    xs: 400,//default, can be skipped
+                    sm: 568,//default, can be skipped
+                    md: 768,//default, can be skipped
+                    lg: 1024,//default, can be skipped
+                    xl: 1200,//default, can be skipped
+                    xxl: 1400,//default, can be skipped
+                    xxxl: 1600,//default, can be skipped
+                    xxxxl: 1900,//default, can be skipped
+                    custom:992 //custom resolution with custom key
+                }
+            };
+
+            $('body').vh(options);
+        })
+    </script>
+    <style>
+        body>div{
+            background: #ccc;
+            width: 50%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            border:2px solid #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Each block has a differrent height for different resolutions</h1>
+<div data-vh="20" data-vh-custom="80">
+    <p>Fallback to 20vh if not over 992</p>
+    <p>> 992px = 80vh</p>
+</div>
+<div data-vh-xs="10" data-vh-sm="50" data-vh-md="80">
+   <p> 0px - 400px = no height definition  </p>
+   <p> >400px = 10vh </p>
+   <p> >500px = 50vh </p>
+   <p> >768px = 80vh </p>
+</div>
+</body>
+</html>
