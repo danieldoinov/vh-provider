@@ -25,12 +25,13 @@ You initialize the plugin as any other jQuery functionality.
                     xs: 400,//default, can be skipped
                     sm: 576,//default, can be skipped
                     md: 768,//default, can be skipped
+                    xmd: 992,//default, can be skipped
                     lg: 1024,//default, can be skipped
                     xl: 1200,//default, can be skipped
                     xxl: 1400,//default, can be skipped
                     xxxl: 1600,//default, can be skipped
                     xxxxl: 1900,//default, can be skipped
-                    custom:992 //custom resolution with custom key
+                    custom:1234 //custom resolution with custom key
                 }
             }
 
@@ -58,6 +59,7 @@ initializing the plugin without any options will give you the following breakpoi
     xs: 400,
     sm: 576,
     md: 768,
+    xmd: 992,
     lg: 1024,
     xl: 1200,
     xxl: 1400,
