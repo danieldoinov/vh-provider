@@ -10,6 +10,7 @@
             // defaults
             debug: false,
             force: false,
+            hardSetHeight: false,
             breakpoints: {
                 xs: 400,
                 sm: 576,
@@ -88,23 +89,37 @@
                     var fallback = true;
                     for (var ind in res.keys) {
                         if ($(el).data('vh-' + res.keys[ind])) {
-                            $(el).height(height * ($(el).data('vh-' + res.keys[ind]) / 100));
+                            if (settings.hardSetHeight) {
+                                $(el).height(height * ($(el).data('vh-' + res.keys[ind]) / 100));
+
+                            } else {
+                                $(el).css('min-height', height * ($(el).data('vh-' + res.keys[ind]) / 100));
+
+                            }
                             fallback = false;
                             break;
                         }
 
                     }
-                    settings.debug?console.log('Fallback to general ( data-vh ) ? ', fallback ? 'yes' : 'no'):false;
+                    settings.debug ? console.log('Fallback to general ( data-vh ) ? ', fallback ? 'yes' : 'no') : false;
                     if (fallback) {
                         if ($(el).data('vh')) {
-                            $(el).height(height * ($(el).data('vh') / 100));
+                            if (settings.hardSetHeight) {
+                                $(el).height(height * ($(el).data('vh') / 100));
+                            } else {
+                                $(el).css('min-height', height * ($(el).data('vh') / 100));
+                            }
 
                         }
                     }
                 } else {
                     if ($(el).data('vh')) {
-                        $(el).height(height * ($(el).data('vh') / 100));
 
+                        if (settings.hardSetHeight) {
+                            $(el).height(height * ($(el).data('vh') / 100));
+                        } else {
+                            $(el).css('min-height', height * ($(el).data('vh') / 100));
+                        }
                     }
                 }
             })

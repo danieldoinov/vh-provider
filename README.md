@@ -21,6 +21,7 @@ You initialize the plugin as any other jQuery functionality.
             
                 debug:false, //display debug information in console
                 force:false, // force resizing on all browsers
+                hardSetHeight:false, // sets the elements height instead of the default 'min-height'
                 breakpoints:{
                     xs: 400,//default, can be skipped
                     sm: 576,//default, can be skipped
