@@ -90,10 +90,9 @@
                     for (var ind in res.keys) {
                         if ($(el).data('vh-' + res.keys[ind])) {
                             if (settings.hardSetHeight) {
-                                $(el).height(height * ($(el).data('vh-' + res.keys[ind]) / 100));
-
+                                $(el).css('height', (height * ($(el).data('vh-' + res.keys[ind]) / 100)) + 'px');
                             } else {
-                                $(el).css('min-height', height * ($(el).data('vh-' + res.keys[ind]) / 100));
+                                $(el).css('min-height', (height * ($(el).data('vh-' + res.keys[ind]) / 100)) + 'px');
 
                             }
                             fallback = false;
@@ -105,9 +104,9 @@
                     if (fallback) {
                         if ($(el).data('vh')) {
                             if (settings.hardSetHeight) {
-                                $(el).height(height * ($(el).data('vh') / 100));
+                                $(el).css('height',(height * ($(el).data('vh') / 100))+'px');
                             } else {
-                                $(el).css('min-height', height * ($(el).data('vh') / 100));
+                                $(el).css('min-height', (height * ($(el).data('vh') / 100))+'px');
                             }
 
                         }
@@ -116,9 +115,9 @@
                     if ($(el).data('vh')) {
 
                         if (settings.hardSetHeight) {
-                            $(el).height(height * ($(el).data('vh') / 100));
+                            $(el).css('height',(height * ($(el).data('vh') / 100))+'px');
                         } else {
-                            $(el).css('min-height', height * ($(el).data('vh') / 100));
+                            $(el).css('min-height', (height * ($(el).data('vh') / 100))+'px');
                         }
                     }
                 }
